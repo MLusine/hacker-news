@@ -1,0 +1,17 @@
+.login-container {
+    display: flex; 
+    flex-direction: column;
+    gap: 20px;
+} 
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.inp {
+    width: 200px;
+}
+.btn {
+    width: max-content;
+    
+}

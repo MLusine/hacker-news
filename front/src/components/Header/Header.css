@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  li a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .container {
+    background: #ff6600;
+    display: flex;
+    justify-content: space-between;
+    width: 99.6%;
+    padding: 2px;
+    letter-spacing: 0.5px;
+  }
+  .menu-list {
+    display: flex;
+    gap: 5px;
+    list-style: none;
+  }
+  
+  .item {
+    list-style: none;
+  }
+  
+  .y-item {
+    padding-right: 4px;
+  }
+  .y {
+    width: 18px;
+    border: 1px solid #fff;
+  }
+  .yphoto {
+    width: 18px;
+    height: 18px;
+  }
+  .hnname {
+    font-weight: bold;
+  }
+  
