@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 });
 
 function formatTimeAgo(date) {
-  const diff = Math.floor((Date.now() - new Date(date)) / (1000 * 60)); // in minutes
+  const diff = Math.floor((Date.now() - new Date(date)) / (1000 * 60));
   if (diff < 60) return `${diff} minutes ago`;
   if (diff < 1440) return `${Math.floor(diff / 60)} hours ago`;
   return `${Math.floor(diff / 1440)} days ago`;
