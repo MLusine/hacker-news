@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -7,58 +8,58 @@ const Header = () => {
       <div className="nav">
         <ul className="menu-list">
           <li className="y-item">
-            <a href="/">
+            <Link to="/">
               <div className="y">
                 <img src="./y18.svg" className="yphoto"/>
               </div>
-            </a>
+            </Link>
           </li>
           <li className="item">
-            <a href="#"> <span className="hnname">Hacker News</span></a>
+            <Link to="/news"> <span className="hnname">Hacker News</span></Link>
           </li>
           <li className="item">
-            <a href="#">new</a>
-          </li>
-          <li className="item">
-            <b> | </b>
-          </li>
-          <li className="item">
-            <a href="#">past</a>
+            <Link to="/newest">new</Link>
           </li>
           <li className="item">
             <b> | </b>
           </li>
           <li className="item">
-            <a href="#">comments</a>
+            <Link to="/front">past</Link>
           </li>
           <li className="item">
             <b> | </b>
           </li>
           <li className="item">
-            <a href="#">ask</a>
+            <Link to="/newcomments">comments</Link>
+          </li>
+          <li className="item">
+            <b> | </b>
+          </li>
+          <li className="item">
+            <Link to="/ask">ask</Link>
           </li>
           <li className="item">
               <b> | </b>
           </li>
           <li className="item">
-            <a href="#">show</a>
+            <Link to="/show">show</Link>
           </li>
           <li className="item">
             <b> | </b>
           </li>
           <li className="item">
-            <a href="#">jobs</a>
+            <Link to="/jobs">jobs</Link>
           </li>
           <li className="item">
             <b> | </b>
           </li>
           <li className="item">
-            <a href="#">submit</a>
+            <Link to="/submit">submit</Link>
           </li>
         </ul>
       </div>
       <div>
-        <a href="/login">login</a>
+        <Link to="/login">login</Link>
       </div>
     </header>
   );
