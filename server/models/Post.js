@@ -5,6 +5,7 @@ const PostSchema = new mongoose.Schema({
   url: String,
   author: String,
   points: { type: Number, default: 0 },
+  timeAgo: String,
   comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
 }, { timestamps: true });
 

@@ -1,0 +1,16 @@
+.comments-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.textarea {
+    width: 45%;
+    height: 150px;
+    padding: 5px;
+    margin: 10px;
+
+}
+.add-comments-btn {
+    width: max-content;
+    margin: 10px;
+    padding: 5px;
+}

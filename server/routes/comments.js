@@ -1,22 +1,25 @@
 const express = require("express");
-const Comment = require("../models/Comment");
-const Post = require("../models/Post");
-
 const router = express.Router();
+const Comment = require("../models/Comment");
 
 router.post("/", async (req, res) => {
-  const { postId, author, text } = req.body;
-  const comment = new Comment({ postId, author, text });
-  await comment.save();
+  const { text,author, timestamp } = req.body;
+  if (!text || !author || !timestamp) return res.status(400).json({ error: "Comment text is required" });
 
-  await Post.findByIdAndUpdate(postId, { $push: { comments: comment._id } });
+  try {
+    const newComment = new Comment({ text, author,
+      timestamp: new Date(timestamp),});
 
-  res.status(201).json(comment);
+    await newComment.save();
+
+    res.status(201).json(newComment);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to save comment" });
+  }
 });
 
-router.get("/:postId", async (req, res) => {
-  const { postId } = req.params;
-  const comments = await Comment.find({ postId });
+router.get("/", async (req, res) => {
+  const comments = await Comment.find().sort({ createdAt: -1 });
   res.json(comments);
 });
 
